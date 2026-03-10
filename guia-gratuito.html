@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guia Gratuito — Começo a se Cuidar | Reset Essencial</title>
+<meta name="description" content="Guia gratuito de suplementação básica. Aprenda o que realmente funciona antes de gastar qualquer coisa.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#F5F0E8;--warm:#FAF7F2;--bark:#5C4A32;--earth:#8B6E4E;--clay:#B8956A;--sage:#7A8C6E;--sand:#D4B896;--deep:#2E2418;--muted:#9B8B7A;--ls:#EDE4D6;--green:#25D366}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--warm);color:var(--deep);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;line-height:1.7}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:15px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(250,247,242,.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(92,74,50,.09)}
+.logo{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--bark);text-decoration:none}.logo span{font-weight:300;font-style:italic;color:var(--clay)}
+.nav-tag{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);background:rgba(122,140,110,.1);padding:5px 12px;border:1px solid rgba(122,140,110,.2)}
+
+/* HERO */
+.hero{min-height:88vh;background:linear-gradient(150deg,var(--bark) 0%,#3d2e1a 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 40px 70px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-150px;left:-150px;width:500px;height:500px;border-radius:50%;border:1px solid rgba(255,255,255,.05)}
+.hero::after{content:'';position:absolute;bottom:-100px;right:-100px;width:400px;height:400px;border-radius:50%;border:1px solid rgba(184,149,106,.08)}
+.hero-in{position:relative;z-index:1;max-width:680px}
+.free-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(122,140,110,.25);color:var(--sage);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;padding:8px 18px;margin-bottom:28px;border:1px solid rgba(122,140,110,.3)}
+.free-badge::before{content:'✓';width:16px;height:16px;background:var(--sage);border-radius:50%;color:white;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,6vw,72px);font-weight:300;color:var(--cream);line-height:1.05;margin-bottom:12px}
+.hero h1 em{font-style:italic;color:var(--sand)}
+.hero-sub{font-size:15px;color:rgba(245,240,232,.6);max-width:500px;margin:0 auto 36px;line-height:1.8}
+.hero-includes{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:40px}
+.hi{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:rgba(245,240,232,.8);font-size:12px;padding:7px 16px;display:flex;align-items:center;gap:7px}
+.hero-cta{display:inline-flex;align-items:center;gap:12px;background:var(--clay);color:white;padding:16px 32px;text-decoration:none;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;transition:all .3s;border:none;cursor:pointer;font-family:'DM Sans',sans-serif}
+.hero-cta:hover{background:var(--sand);transform:translateY(-2px)}
+.hero-note{margin-top:16px;font-size:12px;color:rgba(245,240,232,.35)}
+
+/* PROGRESS BAR */
+.prog-wrap{background:var(--deep);padding:14px 48px;border-bottom:2px solid rgba(184,149,106,.3);position:sticky;top:51px;z-index:90}
+.prog-inner{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:16px}
+.prog-lbl{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.prog-bar{flex:1;height:3px;background:rgba(255,255,255,.08);border-radius:2px}
+.prog-fill{height:100%;background:var(--clay);border-radius:2px;width:0%;transition:width .3s}
+.prog-pct{font-size:12px;color:var(--sand);white-space:nowrap;min-width:36px;text-align:right}
+
+/* CONTENT */
+.content{max-width:760px;margin:0 auto;padding:72px 48px 0}
+.section{margin-bottom:72px;opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}.section.vis{opacity:1;transform:translateY(0)}
+.section.vis{opacity:1;transform:translateY(0)}
+.sec-tag{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--sage);margin-bottom:14px;display:block}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.5vw,38px);font-weight:300;color:var(--bark);line-height:1.15;margin-bottom:20px}
+.sec-title em{font-style:italic;color:var(--clay)}
+.txt p{font-size:15px;line-height:1.9;color:var(--muted);margin-bottom:16px}
+.txt p strong{color:var(--bark);font-weight:500}
+.insight{background:var(--ls);border-left:4px solid var(--clay);padding:22px 26px;margin:28px 0}
+.insight p{font-size:14px;line-height:1.8;color:var(--earth)}
+.insight p strong{color:var(--bark);font-weight:500}
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin:28px 0}
+.stat{background:var(--cream);padding:28px 22px;text-align:center}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;color:var(--clay);line-height:1}
+.stat-lbl{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.5}
+.myth-list{display:flex;flex-direction:column;gap:2px;margin:24px 0}
+.myth{background:var(--cream);padding:22px 26px;display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start}
+.myth-x{width:28px;height:28px;background:#e8d5d5;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;margin-top:2px}
+.myth-check{width:28px;height:28px;background:rgba(122,140,110,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;margin-top:2px}
+.myth h4{font-size:14px;font-weight:500;color:var(--bark);margin-bottom:5px}
+.myth p{font-size:13px;color:var(--muted);line-height:1.6}
+.myth.true{background:rgba(122,140,110,.06)}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin:24px 0}
+.trio-item{background:var(--cream);padding:26px 22px;text-align:center;transition:background .3s}
+.trio-item:hover{background:var(--ls)}
+.trio-item span{font-size:32px;display:block;margin-bottom:12px}
+.trio-item h4{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--bark);margin-bottom:8px}
+.trio-item p{font-size:13px;color:var(--muted);line-height:1.5}
+
+/* BLUR GATE — conteúdo bloqueado */
+.blur-section{position:relative;margin-bottom:72px}
+.blur-content{filter:blur(6px);pointer-events:none;user-select:none;opacity:.6}
+.blur-gate{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(to bottom,rgba(250,247,242,0) 0%,rgba(250,247,242,.97) 40%);padding:40px}
+.blur-gate-box{background:var(--bark);padding:44px 40px;text-align:center;max-width:480px;box-shadow:0 16px 60px rgba(46,36,24,.3)}
+.blur-gate-box h3{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:var(--cream);margin-bottom:8px}
+.blur-gate-box h3 em{font-style:italic;color:var(--sand)}
+.blur-gate-box p{font-size:14px;color:rgba(245,240,232,.6);margin-bottom:28px;line-height:1.7}
+.blur-items{display:flex;flex-direction:column;gap:8px;margin-bottom:28px}
+.bi{display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(245,240,232,.8)}
+.bi::before{content:'✓';width:18px;height:18px;background:rgba(184,149,106,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0}
+.price-row{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:8px}
+.p-orig{font-size:14px;color:rgba(245,240,232,.4);text-decoration:line-through}
+.p-kit{font-family:'Cormorant Garamond',serif;font-size:36px;color:var(--cream)}
+.p-save{font-size:12px;color:var(--sage);margin-bottom:24px}
+.btn-unlock{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--clay);color:white;padding:15px 26px;text-decoration:none;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;transition:all .3s;margin-bottom:10px}
+.btn-unlock:hover{background:var(--sand)}
+.btn-unlock-wa{display:flex;align-items:center;justify-content:center;gap:10px;background:transparent;color:rgba(245,240,232,.7);padding:13px 26px;text-decoration:none;font-size:12px;letter-spacing:1px;text-transform:uppercase;transition:all .3s;border:1px solid rgba(255,255,255,.15)}
+.btn-unlock-wa:hover{background:rgba(255,255,255,.07)}
+.btn-unlock-wa svg{width:15px;height:15px;fill:var(--green);flex-shrink:0}
+.gate-note{font-size:11px;color:rgba(245,240,232,.3);margin-top:12px}
+
+/* FINAL CTA */
+.final-cta{background:var(--bark);padding:80px 48px;text-align:center;position:relative;overflow:hidden;margin-top:80px}
+.final-cta::before{content:'';position:absolute;top:-120px;right:-120px;width:500px;height:500px;border-radius:50%;border:1px solid rgba(255,255,255,.05)}
+.final-cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,52px);font-weight:300;color:var(--cream);line-height:1.1;margin-bottom:14px;position:relative;z-index:1}
+.final-cta h2 em{font-style:italic;color:var(--sand)}
+.final-cta p{font-size:15px;color:rgba(245,240,232,.6);max-width:480px;margin:0 auto 36px;line-height:1.8;position:relative;z-index:1}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+.btn-lg{display:inline-flex;align-items:center;gap:11px;background:var(--clay);color:white;padding:16px 32px;text-decoration:none;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;transition:all .3s}
+.btn-lg:hover{background:var(--sand);transform:translateY(-2px)}
+.btn-lg-wa{display:inline-flex;align-items:center;gap:11px;background:transparent;color:rgba(245,240,232,.8);padding:15px 32px;text-decoration:none;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;transition:all .3s;border:1.5px solid rgba(255,255,255,.2)}
+.btn-lg-wa:hover{background:rgba(255,255,255,.07);transform:translateY(-2px)}
+.btn-lg-wa svg{width:18px;height:18px;fill:var(--green)}
+.cta-note{margin-top:18px;font-size:12px;color:rgba(245,240,232,.3);position:relative;z-index:1}
+
+.fwa{position:fixed;bottom:24px;right:24px;z-index:300;background:var(--green);width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.4);animation:pulse 2.5s ease-in-out infinite}
+.fwa:hover{transform:scale(1.1);animation:none}
+.fwa svg{width:24px;height:24px;fill:white}
+@keyframes pulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}50%{box-shadow:0 4px 36px rgba(37,211,102,.7)}}
+footer{background:var(--deep);padding:28px 48px;display:flex;align-items:center;justify-content:space-between}
+footer .logo{color:var(--sand)}footer .logo span{color:var(--clay)}
+.fp{font-size:12px;color:rgba(255,255,255,.28)}
+@media(max-width:700px){
+  nav{padding:13px 18px}.prog-wrap{padding:11px 18px}
+  .hero{padding:90px 20px 55px}.content{padding:48px 20px 0}
+  .stats-row{grid-template-columns:1fr 1fr}.trio{grid-template-columns:1fr}
+  .final-cta{padding:56px 20px}.cta-btns{flex-direction:column;align-items:center}
+  footer{padding:22px 18px;flex-direction:column;gap:8px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="reset-essencial.html" class="logo">Reset <span>Essencial</span></a>
+  <span class="nav-tag">Guia Gratuito</span>
+</nav>
+
+<section class="hero">
+  <div class="hero-in">
+    <div class="free-badge">100% gratuito</div>
+    <h1>Antes de gastar com suplemento,<br><em>leia isso.</em></h1>
+    <p class="hero-sub">O que a maioria das pessoas erra na suplementação — e como fazer o básico funcionar de verdade.</p>
+    <div class="hero-includes">
+      <div class="hi">📖 O que realmente funciona</div>
+      <div class="hi">❌ 5 erros mais comuns</div>
+      <div class="hi">✅ Os 3 suplementos essenciais</div>
+      <div class="hi">📋 Protocolo básico gratuito</div>
+    </div>
+    <a href="#conteudo" class="hero-cta">Ler o guia gratuito</a>
+    <p class="hero-note">Sem cadastro · Sem e-mail · Só leitura</p>
+  </div>
+</section>
+
+<div class="prog-wrap">
+  <div class="prog-inner">
+    <span class="prog-lbl">Progresso</span>
+    <div class="prog-bar"><div class="prog-fill" id="progFill"></div></div>
+    <span class="prog-pct" id="progPct">0%</span>
+  </div>
+</div>
+
+<div class="content" id="conteudo">
+
+  <div class="section">
+    <span class="sec-tag">O problema</span>
+    <h2 class="sec-title">Por que a maioria das pessoas<br><em>joga dinheiro fora</em> com suplemento?</h2>
+    <div class="txt">
+      <p>A indústria de suplementos no Brasil fatura mais de <strong>R$ 11 bilhões por ano.</strong> A maior parte desse dinheiro vai para prateleiras de farmácia cobertas de embalagens coloridas prometendo coisas que a ciência não confirma.</p>
+      <p>O problema não é que suplemento não funciona. <strong>O problema é que a maioria das pessoas começa pelo lugar errado.</strong> Compra o que está na moda, ignora o que o corpo realmente precisa, e para de tomar depois de duas semanas porque "não sentiu nada".</p>
+    </div>
+    <div class="stats-row">
+      <div class="stat"><div class="stat-num">77%</div><div class="stat-lbl">dos brasileiros têm deficiência de vitamina D</div></div>
+      <div class="stat"><div class="stat-num">60%</div><div class="stat-lbl">têm ingestão de magnésio abaixo do ideal</div></div>
+      <div class="stat"><div class="stat-num">2x</div><div class="stat-lbl">mais barato corrigir base do que comprar stacks complexos</div></div>
+    </div>
+    <div class="txt">
+      <p>Esses são déficits reais, silenciosos, que afetam energia, sono, imunidade e humor. Antes de qualquer outra coisa, <strong>essas lacunas precisam ser fechadas.</strong></p>
+    </div>
+  </div>
+
+  <div class="section">
+    <span class="sec-tag">Os mitos</span>
+    <h2 class="sec-title">5 coisas que você<br><em>provavelmente acredita</em> e estão te custando dinheiro</h2>
+    <div class="myth-list">
+      <div class="myth">
+        <div class="myth-x">✗</div>
+        <div><h4>"Preciso de whey, creatina e pré-treino para ter resultado"</h4><p>Se sua base nutricional está ruim — vitaminas, minerais, sono — nenhum stack de performance vai funcionar direito. Base primeiro.</p></div>
+      </div>
+      <div class="myth">
+        <div class="myth-x">✗</div>
+        <div><h4>"Suplemento caro é melhor"</h4><p>O magnésio quelato que custa R$25 pode ter absorção superior ao "complexo noturno premium" de R$180. O que importa é a forma química, não o preço.</p></div>
+      </div>
+      <div class="myth">
+        <div class="myth-x">✗</div>
+        <div><h4>"Se não senti efeito em 2 semanas, não funciona"</h4><p>Deficiências acumuladas em anos levam semanas ou meses para ser corrigidas. Consistência de 30 a 90 dias é o mínimo para uma avaliação real.</p></div>
+      </div>
+      <div class="myth">
+        <div class="myth-x">✗</div>
+        <div><h4>"Quanto mais suplementos, melhor"</h4><p>Mais de 5 suplementos ao mesmo tempo sem orientação gera competição de absorção, custo alto e dificuldade de identificar o que está funcionando.</p></div>
+      </div>
+      <div class="myth true">
+        <div class="myth-check">✓</div>
+        <div><h4>A verdade: o básico bem feito supera qualquer stack complexo</h4><p>Multivitamínico, magnésio, vitamina D3 e ômega 3. Quatro suplementos. Trinta dias. Você vai sentir a diferença.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <span class="sec-tag">O que funciona</span>
+    <h2 class="sec-title">Os 3 pilares de uma<br><em>suplementação que funciona</em></h2>
+    <div class="trio">
+      <div class="trio-item"><span>🎯</span><h4>Objetivo claro</h4><p>Sono, energia, imunidade, performance — cada objetivo tem suplementos específicos. Comece sabendo o que quer resolver.</p></div>
+      <div class="trio-item"><span>⏱️</span><h4>Consistência real</h4><p>30 dias ininterruptos. Não 30 dias quando lembrar. O suplemento que você toma todo dia bate qualquer um que você toma às vezes.</p></div>
+      <div class="trio-item"><span>📋</span><h4>Protocolo simples</h4><p>Saber exatamente o que, quando e como tomar. A dose certa no horário certo faz toda a diferença na absorção.</p></div>
+    </div>
+    <div class="insight"><p><strong>A lógica é simples:</strong> seu corpo não sabe que você está suplementando. Ele só sabe que está recebendo (ou não) os nutrientes de que precisa. Regularidade e qualidade valem mais que quantidade.</p></div>
+  </div>
+
+  <!-- CONTEÚDO BLOQUEADO — Protocolo completo -->
+  <div class="blur-section" id="gateSection">
+    <div class="blur-content">
+      <div class="section" style="opacity:1;transform:none">
+        <span class="sec-tag">Protocolo gratuito</span>
+        <h2 class="sec-title">O protocolo básico<br><em>de 30 dias</em></h2>
+        <div class="txt">
+          <p>Se você vai fazer apenas uma coisa para sua saúde nos próximos 30 dias, que seja essa. Três suplementos, três horários, resultado real.</p>
+          <p><strong>Manhã:</strong> Multivitamínico completo com a primeira refeição. Vitaminas lipossolúveis precisam de gordura para absorção — coma algo junto.</p>
+          <p><strong>Almoço:</strong> Vitamina D3 com a refeição principal. Ovos, azeite ou abacate na mesma refeição dobram a absorção.</p>
+          <p><strong>Noite:</strong> Magnésio quelato 30 a 60 minutos antes de dormir. Esse é o passo que mais gente ignora — e o que mais faz diferença no sono.</p>
+        </div>
+        <div class="trio">
+          <div class="trio-item"><span>☀️</span><h4>Manhã</h4><p>Multivitamínico com refeição</p></div>
+          <div class="trio-item"><span>🌞</span><h4>Almoço</h4><p>Vitamina D3 com gordura boa</p></div>
+          <div class="trio-item"><span>🌙</span><h4>Noite</h4><p>Magnésio 30–60 min antes</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="blur-gate">
+      <div class="blur-gate-box">
+        <h3>Quer o protocolo<br><em>completo?</em></h3>
+        <p>O guia completo inclui protocolo detalhado, horários exatos, combinações que aumentam absorção, hábitos que potencializam, FAQ e podcast exclusivo — tudo incluso no kit.</p>
+        <div class="blur-items">
+          <div class="bi">Protocolo dia a dia detalhado</div>
+          <div class="bi">Combinações que dobram absorção</div>
+          <div class="bi">Hábitos que potencializam o kit</div>
+          <div class="bi">Podcast completo NotebookLM</div>
+          <div class="bi">Suporte via WhatsApp</div>
+        </div>
+        <div class="price-row">
+          <span class="p-orig">R$ 162,45</span>
+          <span class="p-kit">R$ 151,08</span>
+        </div>
+        <p class="p-save">7% de desconto · Economize R$ 11,37</p>
+        <a href="https://wa.me/5511987206421?text=Ol%C3%A1%21%20Quero%20comprar%20o%20Kit%2001%20%E2%80%94%20Come%C3%A7o%20Organizado%20%28R%24%20151%2C08%29.%20Pode%20me%20ajudar%3F" class="btn-unlock" target="_blank">
+          <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:white;flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.025.507 3.933 1.395 5.61L.057 23.994l6.538-1.714A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.788 9.788 0 01-4.99-1.368l-.358-.213-3.881 1.018 1.037-3.786-.234-.389A9.789 9.789 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+          Quero o kit completo — WhatsApp
+        </a>
+        <p style="font-size:11px;color:rgba(245,240,232,.4);margin-top:8px">PIX · Cartão · Código de desconto — tudo no WhatsApp</p>
+        <p class="gate-note">Acesso imediato · Guia digital completo incluso</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end content -->
+
+<section class="final-cta">
+  <h2>Pronto para fazer<br><em>o básico direito?</em></h2>
+  <p>Escolha seu kit. Receba o guia completo com protocolo detalhado e podcast exclusivo. Comece hoje.</p>
+  <div class="cta-btns">
+    <a href="reset-essencial.html#kits" class="btn-lg">Ver todos os kits</a>
+    <a href="https://wa.me/5511987206421?text=Ol%C3%A1!%20Li%20o%20guia%20gratuito%20e%20quero%20saber%20mais%20sobre%20os%20kits." class="btn-lg-wa" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.025.507 3.933 1.395 5.61L.057 23.994l6.538-1.714A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.788 9.788 0 01-4.99-1.368l-.358-.213-3.881 1.018 1.037-3.786-.234-.389A9.789 9.789 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+      Falar no WhatsApp
+    </a>
+  </div>
+  <p class="cta-note">Pagamento seguro · Guia digital imediato · 7% de desconto em todo kit</p>
+</section>
+
+<footer>
+  <a href="reset-essencial.html" class="logo">Reset <span>Essencial</span></a>
+  <p class="fp">Suplementação com propósito · Guia gratuito</p>
+</footer>
+
+<a href="https://wa.me/5511987206421?text=Ol%C3%A1!%20Vi%20o%20guia%20gratuito%20e%20tenho%20interesse." class="fwa" target="_blank">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.025.507 3.933 1.395 5.61L.057 23.994l6.538-1.714A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.788 9.788 0 01-4.99-1.368l-.358-.213-3.881 1.018 1.037-3.786-.234-.389A9.789 9.789 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+</a>
+
+<script>
+// Progress bar de leitura
+window.addEventListener('scroll',()=>{
+  const el=document.getElementById('conteudo');
+  if(!el)return;
+  const top=el.offsetTop;
+  const h=el.offsetHeight;
+  const scrolled=window.scrollY-top;
+  const pct=Math.min(100,Math.max(0,Math.round((scrolled/h)*100)));
+  document.getElementById('progFill').style.width=pct+'%';
+  document.getElementById('progPct').textContent=pct+'%';
+});
+// Reveal
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}})},{threshold:.08});
+document.querySelectorAll('.section').forEach((el,i)=>{el.style.transitionDelay=(i*.08)+'s';obs.observe(el)});
+  // Fallback: garante que conteúdo apareça mesmo sem scroll
+  setTimeout(() => {
+    document.querySelectorAll('.section').forEach(el => el.classList.add('vis'));
+  }, 300);
+</script>
+</body>
+</html>
